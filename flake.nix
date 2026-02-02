@@ -55,7 +55,6 @@
           # ./host/common/storage.nix
           # ./host/common/monitoring.nix
           ./host/nodes/elitedesk-1/configuration.nix
-          ./host/nodes/elitedesk-1/hardware-configuration.nix
         ];
 
         ######################################################################

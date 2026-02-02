@@ -6,24 +6,20 @@
 
 {
   imports = [
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-pc-ssd
+    # 1. Load hardware defaults by type
+    ../../common/hardware/elitebook.nix
 
-    # Defaults for every NixOS system
-    ../../../nix-common
-
-    # Host machine specific commons
-    ../../common/base.nix
-
-    # Include the results of the hardware scan.
+    # 2. Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    # 3. Defaults for every NixOS system
+    ../../../nixos-common/base
+
+    # 4. Include default monitoring services
+    ../../../nixos-common/monitoring
   ];
 
   networking.hostName = "elitebook-1";
-
-  environment.systemPackages = with pkgs; [
-    neovim
-  ];
 
   my.networking = {
     interface = "eno1";
