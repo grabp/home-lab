@@ -12,11 +12,17 @@
     # 2. Include the results of the hardware scan.
     ./hardware-configuration.nix
 
+    # 2.1. Include necessary components for zfs storage
+    ../../common/zfs-storage.nix
+
     # 3. Defaults for every NixOS system
     ../../../nixos-common/base
 
     # 4. Include default monitoring services
     ../../../nixos-common/monitoring
+
+    # 5. Include incus service
+    ../../common/services/incus.nix
   ];
 
   networking.hostId = "d90a56a6";
