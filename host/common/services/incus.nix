@@ -2,7 +2,12 @@
 
 {
   #### Incus daemon
-  virtualisation.incus.enable = true;
+  virtualisation.incus = {
+    enable = true;
+    ui = {
+      enable = true;
+    };
+  };
 
   #### Firewall requirements (per NixOS wiki)
   networking.nftables.enable = true;
