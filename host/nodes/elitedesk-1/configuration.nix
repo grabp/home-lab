@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -26,10 +25,14 @@
     neovim
   ];
 
-  my.networking.staticIPv4 = {
-    enable = true;
-    address = "10.0.0.150";
-    gateway = "10.0.0.1";
+  my.networking = {
+    interface = "eno1";
+
+    staticIPv4 = {
+      enable = true;
+      address = "10.0.0.150";
+      gateway = "10.0.0.1";
+    };
   };
 
   system.stateVersion = "25.11";
