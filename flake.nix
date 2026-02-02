@@ -92,8 +92,7 @@
           ####################################################################
 
           elitedesk-1 = {
-            hostname = "10.0.0.12";
-            # ip = self.nixosConfigurations.elitedesk-1.config.my.networking.staticIPv4.address;
+            hostname = self.nixosConfigurations.elitedesk-1.config.my.networking.staticIPv4.address;
             sshUser = "ops";
 
             profiles.system = {
