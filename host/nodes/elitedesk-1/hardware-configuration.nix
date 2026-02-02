@@ -28,22 +28,35 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d9b191ac-78f7-42b1-8f40-b3b3dfb38271";
-    fsType = "ext4";
+    device = "zpool/root";
+    fsType = "zfs";
+  };
+
+  fileSystems."/nix" = {
+    device = "zpool/nix";
+    fsType = "zfs";
+  };
+
+  fileSystems."/var" = {
+    device = "zpool/var";
+    fsType = "zfs";
+  };
+
+  fileSystems."/home" = {
+    device = "zpool/home";
+    fsType = "zfs";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/AB41-2BA5";
+    device = "/dev/disk/by-uuid/17DA-BE9C";
     fsType = "vfat";
     options = [
-      "fmask=0077"
-      "dmask=0077"
+      "fmask=0022"
+      "dmask=0022"
     ];
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/5d6a8175-ad28-4d36-83e9-ad2ecf6ec0b3"; }
-  ];
+  swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

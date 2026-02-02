@@ -50,10 +50,6 @@
         ######################################################################
 
         elitedesk-1 = mkSystem [
-          # ./host/common/base.nix
-          # ./host/common/incus.nix
-          # ./host/common/storage.nix
-          # ./host/common/monitoring.nix
           ./host/nodes/elitedesk-1/configuration.nix
         ];
 

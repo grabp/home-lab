@@ -19,6 +19,7 @@
     ../../../nixos-common/monitoring
   ];
 
+  networking.hostId = "d90a56a6";
   networking.hostName = "elitebook-1";
 
   my.networking = {

@@ -11,6 +11,8 @@
       "cpu"
       "meminfo"
       "loadavg"
+      "netdev"
+      "diskstats"
     ];
 
     disabledCollectors = [
