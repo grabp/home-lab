@@ -1,5 +1,14 @@
+# creation_rules:
+#   - age: >-
+#       age18dv6f9zy7xadup7txek3uyma6fx2a3lfamaxcd4dzmphf620aeesg6eram,
+#       age1acgas9zrcku7pner4vqmm64l8435uf3tt92psrd0lwx9zh7y6gjsdfgtxp,
+#       age10eysz9tmpa22gkgr3ulmmmy870q4gcukwl4enxqp4r8y8wp8lpxsmmuyq7
+
+keys:
+  - &nixos-test age1hf3gdvtq2lv3aylrf7pwy8avnv8e8wkfew5cqxg44h2vweyvcpcsqdqumx
+
 creation_rules:
-  - age: >-
-      age18dv6f9zy7xadup7txek3uyma6fx2a3lfamaxcd4dzmphf620aeesg6eram,
-      age1acgas9zrcku7pner4vqmm64l8435uf3tt92psrd0lwx9zh7y6gjsdfgtxp,
-      age10eysz9tmpa22gkgr3ulmmmy870q4gcukwl4enxqp4r8y8wp8lpxsmmuyq7
+  - path_regex: secrets/nixos-test/.*\.yaml
+    key_groups:
+      - age:
+          - *nixos-test
