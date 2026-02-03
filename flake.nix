@@ -57,6 +57,11 @@
         # GUEST VMS (managed by Incus)
         ######################################################################
 
+        nixos-test = mkSystem [
+          sops-nix.nixosModules.sops
+          ./guests/nixos-test/configuration.nix
+        ];
+
         # edge-vm = mkSystem [
         #   sops-nix.nixosModules.sops
         #   ./guests/common.nix
